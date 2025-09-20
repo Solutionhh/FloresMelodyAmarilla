@@ -1085,23 +1085,23 @@ document.addEventListener('click', e => crearCorazonesYFlores(e.clientX, e.clien
 
 <style>
 .special-text {
-  white-space: nowrap;        /* evita que el texto haga salto de línea */
-  overflow-x: auto;           /* scroll horizontal si es muy largo */
-  font-size: 36px;            /* más grande */
+  white-space: nowrap;
+  overflow-x: auto;
+  font-size: 5vw; /* se ajusta a la pantalla */
   font-weight: bold;
-  color: #FFD700;             /* amarillo brillante */
+  color: #FFD700;
   text-shadow: 
     0 0 5px #FFD700,
     0 0 10px #FFD700,
+    0 0 15px #FFA500,
     0 0 20px #FFA500,
-    0 0 30px #FFA500,
-    0 0 40px #FF8C00;        /* efecto neón / brillo */
-  
-  border: 2px solid #FFD700; /* borde amarillo */
+    0 0 25px #FF8C00;
+  border: 2px solid #FFD700;
   border-radius: 10px;
   padding: 10px 20px;
-  background: rgba(0,0,0,0.2); /* contraste para que resalte */
-  text-align: center;         /* opcional, centrar el texto */
+  background: rgba(0,0,0,0.2);
+  text-align: center;
+  display: inline-block;
 }
 </style>
 
@@ -1456,6 +1456,7 @@ document.addEventListener('click', e => crearCorazonesYFlores(e.clientX, e.clien
 </body>
 
 </html>
+
 
 
 
