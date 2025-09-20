@@ -972,55 +972,58 @@ body {
   </script>
   <div class="night"></div>
 
-<script>
-  const palabras = [
-    "Hermosa", "Divina", "Preciosa", "Princesa mía", "Mujer maravillosa",
-    "Amor de mi vida", "Mi reina", "Tesoro", "Dulzura", "Mi cielo",
-    "Corazón", "Mi todo", "Eres única", "Bella", "Encanto", "Estrella"
-  ];
-
-  function crearPalabra() {
-    // Crear elemento
-    const span = document.createElement("span");
-    span.textContent = palabras[Math.floor(Math.random() * palabras.length)];
-    span.classList.add("palabra");
-
-    // Posición aleatoria en la pantalla
-    span.style.top = Math.random() * 100 + "vh";
-    span.style.left = Math.random() * 100 + "vw";
-
-    // Agregar al body
-    document.body.appendChild(span);
-
-    // Borrar después de la animación
-    setTimeout(() => {
-      span.remove();
-    }, 4000);
-  }
-
-  // Crear una palabra cada 1.5 segundos
-  setInterval(crearPalabra, 1500);
-</script>
+<div id="palabras-fondo"></div>
 
 <style>
+  #palabras-fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+  }
   .palabra {
     position: absolute;
-    font-size: 1.8em;
-    color: #ffd700; /* dorado que combina con amarillo */
-    text-shadow: 0 0 8px #ffec8b, 0 0 15px #ffa500;
-    font-weight: bold;
+    font-size: 24px;
+    color: #FFD700; /* dorado que combina con amarillo */
+    text-shadow: 1px 1px 2px #FFA500;
     opacity: 0;
-    animation: aparecer 4s forwards;
-    white-space: nowrap;
-  }
-
-  @keyframes aparecer {
-    0%   { opacity: 0; transform: scale(0.5); }
-    20%  { opacity: 1; transform: scale(1); }
-    80%  { opacity: 1; transform: scale(1); }
-    100% { opacity: 0; transform: scale(1.2); }
+    transition: opacity 2s;
   }
 </style>
+
+<script>
+const palabras = [
+  "hermosa", "divina", "preciosa", "princesa mía",
+  "mujer maravillosa", "linda", "amada", "bella",
+  "estrella", "encantadora", "diosa"
+];
+
+function crearPalabra() {
+  const palabraElem = document.createElement('span');
+  palabraElem.className = 'palabra';
+  palabraElem.textContent = palabras[Math.floor(Math.random() * palabras.length)];
+
+  // posición aleatoria dentro del contenedor
+  const cont = document.getElementById('palabras-fondo');
+  const maxX = cont.clientWidth - 100; // ajustar según tamaño de palabra
+  const maxY = cont.clientHeight - 50;
+  palabraElem.style.left = Math.random() * maxX + 'px';
+  palabraElem.style.top = Math.random() * maxY + 'px';
+
+  cont.appendChild(palabraElem);
+
+  // animación de aparición/desaparición
+  setTimeout(() => palabraElem.style.opacity = 1, 50);
+  setTimeout(() => palabraElem.style.opacity = 0, 2000);
+  setTimeout(() => palabraElem.remove(), 4000);
+}
+
+// crear palabras continuamente
+setInterval(crearPalabra, 800);
+</script>
 
     
   <div class="special-text">Estas flores son un pequeño gesto para una gran persona mel</div>
@@ -1374,6 +1377,7 @@ body {
 </body>
 
 </html>
+
 
 
 
