@@ -996,9 +996,24 @@ body {
 
 <script>
 const palabras = [
-  "hermosa", "divina", "preciosa", "princesa mía",
-  "mujer maravillosa", "linda", "amada", "bella",
-  "estrella", "encantadora", "diosa"
+  "hermosa", "divina", "preciosa", "princesa mía", "mujer maravillosa", "linda", "amada", "bella",
+  "estrella mia", "encantadora", "diosa", "radiante", "Sonrisa radiante", "tesoro", "joya", "ángel",
+  "luz de mi vida", "mi mundo", "amor de mujer", "mi cielo", "adorada", "dulzura", "cariño",
+  "Serendipia", "encanto", "magica", "mi inspiración", "fascinante", "única", "perfecta", "admirable",
+  "mi sol", "estrella brillante", "encanto celestial", "soñadora", "querida", "mi razón",
+  "amor eterno", "tesoro valioso", "belleza sin igual", "preciosa alma", "mi alegría",
+  "mi luz", "amor de mi vida", "mi corazón", "mi todo", "cariño eterno", "dulce amor",
+  "corazón hermoso", "mi universo", "mi confidente", "preciosa compañera", "tesoro del alma",
+  "joya rara", "mi felicidad", "mi risa", "mi paz", "mi refugio", "mi musa", "mi corazón late por ti",
+  "la más linda", "mi flor", "mi cielo estrellado", "amor verdadero", "mi inspiración diaria",
+  "mi alegría infinita", "mi estrella dorada", "mi sol radiante", "mi cielo hermoso", "dulce luz",
+  "mi encanto", "mi bella estrella", "mi alegría de vivir", "tesoro encantador", "mi amor sincero",
+  "mi diamante", "mi corazón alegre", "mi ángel de luz", "mi musa inspiradora", "mi dulce encanto",
+  "mi cielo brillante", "mi estrella del amanecer", "mi alegría constante", "mi vida radiante",
+  "mi dulce amor", "mi amor luminoso", "mi tesoro encantado", "mi princesa dorada", "mi alegría preciosa",
+  "mi felicidad radiante", "mi corazón de oro", "mi joya celestial", "mi bella diosa", "mi amada única",
+  "mi luz eterna", "mi dulce tesoro", "mi ángel precioso", "mi sol brillante", "mi estrella favorita",
+  "mi felicidad infinita", "mi mundo encantado", "mi encanto especial", "mi amor celestial", "mi dulzura infinita"
 ];
 
 function crearPalabra() {
@@ -1022,11 +1037,16 @@ function crearPalabra() {
 }
 
 // crear palabras continuamente
-setInterval(crearPalabra, 800);
+setInterval(() => {
+  for (let i = 0; i < 5; i++) { // <- aquí defines cuántas palabras aparecen a la vez
+    crearPalabra();
+  }
+}, 800);
+
 </script>
 
     
-  <div class="special-text">Estas flores son un pequeño gesto para una gran persona mel</div>
+  <div class="special-text">Flores amarillas para Melody, la chica que me gusta</div>
   
 
   <div class="shooting-stars">
@@ -1377,6 +1397,7 @@ setInterval(crearPalabra, 800);
 </body>
 
 </html>
+
 
 
 
