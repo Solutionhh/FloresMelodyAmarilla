@@ -1079,7 +1079,31 @@ document.addEventListener('click', e => crearCorazonesYFlores(e.clientX, e.clien
 </script>
 
     
-  <div class="special-text">Flores amarillas para la chica que me tiene enamorado, Melody🌼💛</div>
+  <h1 id="titulo-melody">
+  Flores amarillas para la chica que me tiene enamorado, Melody 🌼💛
+</h1>
+
+<style>
+  #titulo-melody {
+    white-space: nowrap;        /* evita que el texto haga salto de línea */
+    overflow-x: auto;           /* agrega scroll horizontal si es muy largo */
+    font-size: 36px;            /* más grande para destacar */
+    font-weight: bold;
+    color: #FFD700;             /* color principal */
+    text-shadow: 
+      0 0 5px #FFD700,         /* resplandor amarillo */
+      0 0 10px #FFD700,
+      0 0 20px #FFA500,        /* resplandor naranja */
+      0 0 30px #FFA500,
+      0 0 40px #FF8C00;        /* resplandor más fuerte */
+    
+    border: 2px solid #FFD700; /* borde amarillo */
+    border-radius: 10px;
+    padding: 10px 20px;
+    background: rgba(0,0,0,0.2); /* fondo semi-transparente para contraste */
+  }
+</style>
+
   
 
   <div class="shooting-stars">
@@ -1430,6 +1454,7 @@ document.addEventListener('click', e => crearCorazonesYFlores(e.clientX, e.clien
 </body>
 
 </html>
+
 
 
 
