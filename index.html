@@ -1104,6 +1104,12 @@ document.addEventListener('click', e => crearCorazonesYFlores(e.clientX, e.clien
   text-align: center;
   box-sizing: border-box;
 }
+    @media (max-width: 600px) {
+  .special-text {
+    font-size: 5vw;           /* tamaño relativo al ancho del móvil */
+    padding: 8px 12px;        /* reduce padding para que no se corte */
+  }
+}
 </style>
 
 
@@ -1457,6 +1463,7 @@ document.addEventListener('click', e => crearCorazonesYFlores(e.clientX, e.clien
 </body>
 
 </html>
+
 
 
 
