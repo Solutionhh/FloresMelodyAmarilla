@@ -1085,8 +1085,9 @@ document.addEventListener('click', e => crearCorazonesYFlores(e.clientX, e.clien
 
 <style>
 .special-text {
-  white-space: normal;       /* permite saltos de línea */
-  word-wrap: break-word;     /* corta palabras largas si es necesario */
+  display: block;
+  white-space: nowrap;       /* mantiene todo en una línea */
+  overflow-x: auto;          /* agrega scroll si es muy largo */
   font-size: 5vw;
   font-weight: bold;
   color: #FFD700;
@@ -1456,6 +1457,7 @@ document.addEventListener('click', e => crearCorazonesYFlores(e.clientX, e.clien
 </body>
 
 </html>
+
 
 
 
