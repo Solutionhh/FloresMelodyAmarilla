@@ -1044,9 +1044,42 @@ setInterval(() => {
 }, 800);
 
 </script>
+<script>
+function crearCorazonesYFlores(x, y) {
+  const cont = document.getElementById('palabras-fondo');
+  for(let i=0; i<15; i++) { // cantidad de elementos al click
+    const tipo = Math.random() > 0.5 ? 'corazon' : 'flor';
+    const elem = document.createElement('span');
+    elem.className = tipo;
+    elem.textContent = tipo === 'corazon' ? '❤' : '🌼';
+    
+    elem.style.position = 'absolute';
+    elem.style.left = x + (Math.random()*100-50) + 'px';
+    elem.style.top = y + (Math.random()*100-50) + 'px';
+    elem.style.fontSize = tipo === 'corazon' ? '30px' : '28px';
+    elem.style.color = '#FFD700';
+    elem.style.opacity = 0;
+    elem.style.transition = 'opacity 1.5s, transform 1.5s';
+    
+    cont.appendChild(elem);
+
+    // animación de aparición y subida
+    setTimeout(() => {
+      elem.style.opacity = 1;
+      elem.style.transform = `translateY(-50px) rotate(${Math.random()*360}deg)`;
+    }, 50);
+
+    // eliminar después de 2 segundos
+    setTimeout(() => elem.remove(), 2000);
+  }
+}
+
+// detectar click en todo el contenedor
+document.addEventListener('click', e => crearCorazonesYFlores(e.clientX, e.clientY));
+</script>
 
     
-  <div class="special-text">Flores amarillas para Melody, la chica que me gusta</div>
+  <div class="special-text">Flores amarillas para la chica que me tiene enamorado, Melody🌼💛</div>
   
 
   <div class="shooting-stars">
@@ -1397,6 +1430,7 @@ setInterval(() => {
 </body>
 
 </html>
+
 
 
 
